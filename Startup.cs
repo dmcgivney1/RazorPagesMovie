@@ -30,8 +30,13 @@ namespace RazorPagesMovie
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
-      services.AddDbContext<RazorPagesMovieContext>(options =>
+             services.AddRazorPages();
+
+            //services.AddMvc().AddRazorPagesOptions(options =>
+            //{
+            //    options.Conventions.AddPageRoute("/Movies/Index", "");
+            //});
+            services.AddDbContext<RazorPagesMovieContext>(options =>
         options.UseSqlite(Configuration.GetConnectionString("RazorPagesMovieContext")));
 
         }
